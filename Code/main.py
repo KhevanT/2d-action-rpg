@@ -14,25 +14,33 @@ class Game:
     def run(self): # main pygame loop
         while True:
 
-            # check for game quit
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-            
             self.screen.fill((COLOUR_WHITE))
-
-            '''
+            
+            # Debug functions test
             # test screen print debug message
             print_debug(pygame.mouse.get_pos())
-
-            # test log file debug message
-            # check for user input and move player 
-            key = pygame.key.get_pressed()
-            if key[pygame.K_q] == True:
-                log_debug("TEST LOG MESSAGE. Q was pressed")
-            '''
             
+            # Event Handler (Rough)
+            key = pygame.key.get_pressed()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT: # system quit
+                    pygame.quit()
+                    sys.exit()
+                elif event.type == pygame.KEYDOWN: # key pressed down
+                    
+                    # Debug log message test
+                    if event.key == pygame.K_q:
+                        log_debug("TEST LOG MESSAGE. Q was pressed")
+
+                    # Audio functions test
+                    if event.key == pygame.K_s: # play sfx on S keypress
+                        log_debug("S was pressed. SFX played")
+                        soundManager.play_sound("Enemy Deflect")
+                    elif event.key == pygame.K_w: # start bgm on W keypress
+                        log_debug("W was pressed. BGM started playing")
+                        soundManager.play_music("Overworld")
+                    
+                    
 
             # update display and fps
             pygame.display.update()

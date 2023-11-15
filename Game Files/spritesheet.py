@@ -9,7 +9,7 @@ class SpriteSheet:
 
     # this function takes img data and returns specified frame
     def get_frame(self, frame, width, height, scale):
-        
+
         image = pygame.Surface((width, height))
 
         # this tricky line of code extracts the specified frames data starting from (0,0)
@@ -27,7 +27,7 @@ class SpriteSheet:
     # returns a list of all frames from spritesheet
     # CAUSING ERROR : the returned list for some reason is not comprised of the right data type
     # this is leading to errors with image.get_rect() calls
-    '''
+
     def get_all_frames(self, count, width, height, scale):
 
         sprite_list = []
@@ -36,7 +36,7 @@ class SpriteSheet:
             sprite_list.append(x)
             
         return sprite_list
-    '''
+
     
         
 

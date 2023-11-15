@@ -47,19 +47,18 @@ class Game:
                 '''
             # Check for player input
             player_object.movement() 
-            player_object.update()  
 
             # render player
             player_sprite_group.draw(self.screen)
+            player_sprite_group.update()
 
             # update display and fps
             pygame.display.update()
             self.clock.tick(FPS)
 
 
-
 # run main function if file is opened
 if __name__ == "__main__":
     game = Game()
     game.run()
-
+    

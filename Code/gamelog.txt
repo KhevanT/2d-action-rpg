@@ -1,3 +1,0 @@
-TEST LOG MESSAGE. Q was pressed
-TEST LOG MESSAGE. Q was pressed
-TEST LOG MESSAGE. Q was pressed

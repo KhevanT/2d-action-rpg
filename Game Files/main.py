@@ -1,6 +1,7 @@
 import pygame, sys
 from settings import *
 from debug import *
+from initialise import *
 
 # Game Class
 class Game:
@@ -9,6 +10,7 @@ class Game:
 
         pygame.init()
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        pygame.display.set_caption("2D Action RPG")
         self.clock = pygame.time.Clock()
     
     def run(self): # main pygame loop
@@ -18,16 +20,18 @@ class Game:
             
             # Debug functions test
             # test screen print debug message
-            print_debug(pygame.mouse.get_pos())
-            
+            # print_debug(pygame.mouse.get_pos())
+
             # Event Handler (Rough)
-            key = pygame.key.get_pressed()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: # system quit
                     pygame.quit()
                     sys.exit()
+                
+                '''
+                # Tests
                 elif event.type == pygame.KEYDOWN: # key pressed down
-                    
+            
                     # Debug log message test
                     if event.key == pygame.K_q:
                         log_debug("TEST LOG MESSAGE. Q was pressed")
@@ -40,7 +44,13 @@ class Game:
                         log_debug("W was pressed. BGM started playing")
                         soundManager.play_music("Overworld")
                     
-                    
+                '''
+            # Check for player input
+            player_object.movement() 
+            player_object.update()  
+
+            # render player
+            player_sprite_group.draw(self.screen)
 
             # update display and fps
             pygame.display.update()
@@ -52,3 +62,4 @@ class Game:
 if __name__ == "__main__":
     game = Game()
     game.run()
+

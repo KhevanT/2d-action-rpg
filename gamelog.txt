@@ -1,5 +1,0 @@
-TEST LOG MESSAGE. Q was pressed
-W was pressed. BGM started playing
-S was pressed. SFX played
-S was pressed. SFX played
-W was pressed. BGM started playing
